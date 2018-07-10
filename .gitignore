@@ -255,3 +255,4 @@ local.properties
 
 .gitignore
 .idea/
+/server/src/main/resources/static/

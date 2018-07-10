@@ -1,8 +1,11 @@
 <template>
     <div>
         <el-button @click="show2 = !show2" icon="el-icon-search">Click Me</el-button>
+        <a href="m2/index.html">
+            <el-button icon="el-icon-search">Click Me2</el-button>
+        </a>
 
-        <div style="display: flex; margin-top: 20px; height: 100px;">
+        <div class="transition-box-div">
             <transition name="el-zoom-in-center">
                 <div v-show="show2" class="transition-box">.el-zoom-in-center</div>
             </transition>
@@ -22,7 +25,8 @@
     import Vue from 'vue';
     import {Button} from 'element-ui';
 
-    Vue.use(Button);
+    Vue.component(Button.name, Button);
+
     export default Vue.extend({
         name: "App",
         data: () => ({
@@ -43,5 +47,11 @@
         padding: 40px 20px;
         box-sizing: border-box;
         margin-right: 20px;
+    }
+
+    .transition-box-div {
+        display: flex;
+        margin-top: 20px;
+        height: 100px;
     }
 </style>
