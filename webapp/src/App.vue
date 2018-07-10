@@ -1,29 +1,47 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div>
+        <el-button @click="show2 = !show2" icon="el-icon-search">Click Me</el-button>
+
+        <div style="display: flex; margin-top: 20px; height: 100px;">
+            <transition name="el-zoom-in-center">
+                <div v-show="show2" class="transition-box">.el-zoom-in-center</div>
+            </transition>
+
+            <transition name="el-zoom-in-top">
+                <div v-show="show2" class="transition-box">.el-zoom-in-top</div>
+            </transition>
+
+            <transition name="el-zoom-in-bottom">
+                <div v-show="show2" class="transition-box">.el-zoom-in-bottom</div>
+            </transition>
+        </div>
     </div>
-    <router-view/>
-  </div>
 </template>
 
-<style lang="less">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+<script lang="ts">
+    import Vue from 'vue';
+    import {Button} from 'element-ui';
+
+    Vue.use(Button);
+    export default Vue.extend({
+        name: "App",
+        data: () => ({
+            show2: true
+        }),
+    });
+</script>
+
+<style scoped>
+    .transition-box {
+        margin-bottom: 10px;
+        width: 200px;
+        height: 100px;
+        border-radius: 4px;
+        background-color: #409EFF;
+        text-align: center;
+        color: #fff;
+        padding: 40px 20px;
+        box-sizing: border-box;
+        margin-right: 20px;
     }
-  }
-}
 </style>
