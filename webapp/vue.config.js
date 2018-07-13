@@ -35,13 +35,21 @@ module.exports = {
     pages: {
         app: {
             entry: './src/main.ts',
-            // template: './src/index.html'
+            // template: './src/index.html',
             filename: 'index.html'
         },
         'm2': {
-            entry: './src/m2/main.ts',
+            entry: './src/pages/m2/main.ts',
             // template: './src/m2/index.html',
             filename: 'm2/index.html'  // 如果省略filename,生成的html文件的名称会和模块名一样,变成m2.html
+        },
+        'mobile': {
+            entry: './src/pages/mobile/main.js',
+            filename: 'mobile/index.html'
+        },
+        m3: {
+            entry: './src/pages/m3/main.ts',
+            filename: 'm3/index.html'
         }
         // when using the entry-only string format,
         // template is inferred to be `public/subpage.html`

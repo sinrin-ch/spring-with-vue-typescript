@@ -1,6 +1,6 @@
 <template>
     <div class="about">
-        <h1>{{msg}}</h1>
+        <span>{{msg}}</span>
     </div>
 </template>
 <script lang="ts">
@@ -17,7 +17,9 @@
                 .then(({data}) => {
                     console.log(data);
                     this.msg = data;
-                });
+                }).catch((e)=>{
+                    this.msg = e;
+            });
         },
     });
 

@@ -1,9 +1,14 @@
 <template>
     <div>
-        <el-button @click="show2 = !show2" icon="el-icon-search">Click Me</el-button>
-        <a href="m2/index.html">
-            <el-button icon="el-icon-search">Click Me2</el-button>
-        </a>
+        <div class="transition-box-div" style="justify-content: stretch">
+            <el-button @click="show2 = !show2" icon="el-icon-search" class="right-blank">Click Me</el-button>
+            <a href="m2/index.html" class="right-blank">
+                <el-button icon="el-icon-search">Click Me2</el-button>
+            </a>
+            <a href="mobile/index.html" class="right-blank">
+                <el-button icon="el-icon-search">Mobile</el-button>
+            </a>
+        </div>
 
         <div class="transition-box-div">
             <transition name="el-zoom-in-center">
@@ -52,6 +57,9 @@
     .transition-box-div {
         display: flex;
         margin-top: 20px;
-        height: 100px;
+    }
+
+    .right-blank {
+        margin-right: 1rem;
     }
 </style>

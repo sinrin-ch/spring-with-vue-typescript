@@ -29,6 +29,7 @@
     "element-ui": "^2.4.3",
     "less": "^3.0.4",
     "less-loader": "^4.1.0",
+    "mint-ui": "^2.2.13",
     "vue-template-compiler": "^2.5.16"
   },
   "browserslist": [

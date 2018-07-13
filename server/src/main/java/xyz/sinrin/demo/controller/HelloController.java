@@ -12,6 +12,10 @@ public class HelloController {
         return "hello";
     }
 
+    @GetMapping("/1")
+    public String t1(){
+    	return "1";
+    }
     @GetMapping("/api/msg")
     @ResponseBody
     public String msg(){

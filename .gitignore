@@ -256,3 +256,9 @@ local.properties
 .gitignore
 .idea/
 /server/src/main/resources/static/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
