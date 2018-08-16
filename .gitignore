@@ -253,7 +253,6 @@ local.properties
 .scala_dependencies
 .worksheet
 
-.gitignore
 .idea/
 /server/src/main/resources/static/
 
