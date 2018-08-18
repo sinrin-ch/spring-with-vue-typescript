@@ -1,7 +1,7 @@
 import {GetterTree} from "vuex";
-import {RootState} from "@/store/index";
+import RootState from "@/store/RootState";
 
-const getters: GetterTree<RootState, any> = {
+const getters: GetterTree<RootState, RootState> = {
     avatar: state => state.user.avatar,
     sidebar(state) {
         return state.app.sidebar;

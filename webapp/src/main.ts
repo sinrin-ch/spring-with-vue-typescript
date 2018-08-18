@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue, {ComponentOptions} from 'vue'
 
 import 'normalize.css/normalize.css'// A modern alternative to CSS resets
 
@@ -19,9 +19,10 @@ Vue.use(ElementUI);
 
 Vue.config.productionTip = false;
 
-new Vue({
+const componentOptions: ComponentOptions<Vue> = {
     el: '#app',
     router,
     store,
-    render: (h) => h(App)
-});
+    render: (h) => h(App),
+};
+new Vue(componentOptions);

@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import xyz.sinrin.demo.model.User;
+import xyz.sinrin.demo.model.UserVO;
 
 @Controller
 public class HelloController {
@@ -16,7 +16,7 @@ public class HelloController {
 
     @GetMapping("/1")
     public String t1(){
-	    final User user = new User();
+	    final UserVO user = new UserVO();
         user.setAge(11);
 	    return "/WEB-INF/jsp/1.jsp";
     }

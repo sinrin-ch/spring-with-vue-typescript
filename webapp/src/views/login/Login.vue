@@ -34,11 +34,15 @@
 
 <script lang="ts">
     // import { isvalidUsername } from '@/utils/validate'
+
+    import Vue from "vue";
+    import {login} from '@/store/modules/userModule.ts';
+
     function isvalidUsername(value: string) {
         return true;
     }
 
-    export default {
+    export default Vue.extend({
         name: 'login',
         data() {
             const validateUsername = (rule, value, callback) => {
@@ -47,14 +51,14 @@
                 } else {
                     callback()
                 }
-            }
+            };
             const validatePass = (rule, value, callback) => {
                 if (value.length < 5) {
                     callback(new Error('密码不能小于5位'))
                 } else {
                     callback()
                 }
-            }
+            };
             return {
                 loginForm: {
                     username: 'admin',
@@ -76,24 +80,26 @@
                     this.pwdType = 'password'
                 }
             },
-            handleLogin() {
+            handleLogin: function () {
                 this.$refs.loginForm.validate(valid => {
                     if (valid) {
-                        this.loading = true
-                        this.$store.dispatch('Login', this.loginForm).then(() => {
-                            this.loading = false
+                        this.loading = true;
+
+                        login(this.loginForm).then(() => {
+                            this.loading = false;
                             this.$router.push({path: '/'})
                         }).catch(() => {
                             this.loading = false
                         })
                     } else {
-                        console.log('error submit!!')
+                        console.log('error submit!!');
                         return false
                     }
                 })
             }
         }
-    }
+    });
+
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
